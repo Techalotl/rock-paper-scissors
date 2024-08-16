@@ -55,10 +55,6 @@ function playGame() {
         }
     }
     playRound(humanSelection, computerSelection);
-    playRound(humanSelection = getHumanChoice(), computerSelection = getComputerChoice());
-    playRound(humanSelection = getHumanChoice(), computerSelection = getComputerChoice());
-    playRound(humanSelection = getHumanChoice(), computerSelection = getComputerChoice());
-    playRound(humanSelection = getHumanChoice(), computerSelection = getComputerChoice());
     if (humanScore > computerScore) {
         console.log("Congratulations! You win the game")
     } else if (humanScore === computerScore) {

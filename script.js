@@ -12,6 +12,11 @@ function getComputerChoice() {
 const rockButton = document.querySelector("#rock-button");
 const paperButton = document.querySelector("#paper-button");
 const scissorsButton = document.querySelector("#scissors-button");
+const displayPlayerScore = document.querySelector("#player-score");
+const displayComputerScore = document.querySelector("#computer-score");
+const selectionMessage = document.querySelector("#selection-message");
+const roundMessage = document.querySelector("#round-message");
+const finalMessage = document.querySelector("#final-message");
 
 rockButton.addEventListener("click", () => {
     playRound("Rock", getComputerChoice());
@@ -28,32 +33,29 @@ let computerScore = 0
     
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-        console.log("You chose " + humanChoice, "and the computer chose " + computerChoice)
-        console.log("It's a tie!");
-        console.log(humanScore, computerScore)
+        selectionMessage.textContent = "You chose " + humanChoice + " and the computer chose " + computerChoice;
+        roundMessage.textContent = "It's a tie!";
     } else if ((humanChoice === "Rock" && computerChoice === "Scissors") ||
                 (humanChoice === "Paper" && computerChoice === "Rock") ||
                 (humanChoice === "Scissors" && computerChoice === "Paper")) {
-        console.log("You chose " + humanChoice, "and the computer chose " + computerChoice)
-        console.log("You win this round! " + humanChoice + " beats " + computerChoice)
+        selectionMessage.textContent = "You chose " + humanChoice + " and the computer chose " + computerChoice;
+        roundMessage.textContent = "You win this round! " + humanChoice + " beats " + computerChoice;
         humanScore++
-        console.log(humanScore, computerScore)
+        displayPlayerScore.textContent = humanScore;
     } else {
-        console.log("You chose " + humanChoice, "and the computer chose " + computerChoice)
-        console.log("You lose this round! :( " + computerChoice + " beats " + humanChoice);
+        selectionMessage.textContent = "You chose " + humanChoice + " and the computer chose " + computerChoice;
+        roundMessage.textContent = "You lose this round! :( " + computerChoice + " beats " + humanChoice;
         computerScore++;
-        console.log(humanScore, computerScore)
+        displayComputerScore.textContent = computerScore;
     }
     if (humanScore === 5 || computerScore === 5) {
     rockButton.disabled = true;
     paperButton.disabled = true;
     scissorsButton.disabled = true;
     if (humanScore > computerScore) {
-        console.log("Congratulations! You win the game")
-    } else if (humanScore === computerScore) {
-        console.log("Tie ¯\_(ツ)_/¯")
+        finalMessage.textContent = "Congratulations! You win the game";
     } else {
-        console.log("You lose the game. F")
+        finalMessage.textContent = "You lose the game. F"
     }
 }
 }

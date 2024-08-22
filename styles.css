@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #03346E;
+    color: #E2E2B6;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #6EACDA;
+    border-radius: 10%;
+    width: 200px;
+    background-color: #021526;
+}
+
+#player-section,
+#computer-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#player-score,
+#computer-score {
+    font-size: 35px;
+    margin-bottom: -10px;
+    margin-top: 5px;
+}
+
+button {
+    font-size: 50px;
+    margin: 25px;
+    color: #E2E2B6;
+    background-color: #021526;
+    border: 2px solid #6EACDA;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+button:disabled,
+button[disabled]{
+  border: 2px solid #6EACDA;
+  background-color: #cccccc;
+  color: #E2E2B6;
+  cursor: not-allowed;
+}
+
+#messages {
+    background-color: #021526;
+    border: 2px solid #6EACDA;
+    border-radius: 8%;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#reload-button {
+    font-size: 20px;
+    margin-top: 50px;
+}

@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <div id="scores">
-        <p id="player-score">0</p>
-        <p id="computer-score">0</p>
+    <div class="scores">
+        <div id="player-section">
+            <p id="player-score">0</p>
+            <p>Player</p>
+        </div>
+        <div id="computer-section">
+            <p id="computer-score">0</p>
+            <p>Computer</p>
+        </div>
     </div>
     <div id="buttons">
         <button id="rock-button">🪨</button>
@@ -20,6 +27,7 @@
         <p id="round-message"></p>
         <p id="final-message"></p>
     </div>
+    <button id="reload-button" onclick="location.reload();">Play again</button>
     <script src="script.js">
     </script>
 </body>
